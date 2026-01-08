@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio profesional / CV de Diseñadora Multimedia" />
+  <meta name="keywords" content="CV, Curriculum, Vitae, Arte, Ximena, Mabel, Trabajo, Diseñadora Multimedia">
+  <meta http-equiv="Refresh" content="5">
+  <title> Ximena Mabel Montalvo Galván - Portafolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===============================
+       VARIABLES CSS
+    =============================== */ 
+    :root {
+      --color-primario: #82C4C6;
+      --color-secundario: #3C8587;
+      --color-fondo: #FFFFFF;
+      --color-texto: #000000;
+      --color-blanco: #FFFFFF;
+
+      --font-base: 'Baloo Bhai 2', cursive;
+
+      --espacio-xs: 0.5rem;
+      --espacio-sm: 1rem;
+      --espacio-md: 2rem;
+      --espacio-lg: 3rem;
+
+      --radio: 16px;
+      --transicion: 0.3s ease-in-out;
+    }
+
+    /* ===============================
+       RESET BÁSICO
+    =============================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-base);
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===============================
+       HEADER / NAV
+    =============================== */
+    .header {
+      background-color: var(--color-secundario);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--espacio-sm) var(--espacio-md);
+    }
+
+    .header__logo {
+      color: var(--color-blanco);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .header__menu {
+      display: none;
+      flex-direction: column;
+      gap: var(--espacio-sm);
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: var(--color-secundario);
+      width: 100%;
+      padding: var(--espacio-md);
+    }
+
+    .header__menu a {
+      color: var(--color-blanco);
+      font-size: 1.25rem;
+    }
+
+    .header__hamburger {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .header__hamburger span {
+      width: 28px;
+      height: 3px;
+      background-color: var(--color-blanco);
+      transition: var(--transicion);
+    }
+
+    .header__menu--activo {
+      display: flex;
+    }
+
+    /* ===============================
+       HERO
+    =============================== */
+    .hero {
+      background-color: var(--color-primario);
+      padding: calc(var(--espacio-lg) * 2) var(--espacio-md) var(--espacio-lg);
+      text-align: center;
+      color: var(--color-blanco);
+    }
+
+    .hero__img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      margin: 0 auto var(--espacio-sm);
+      border: 6px solid var(--color-blanco);
+      object-fit: cover;
+    }
+
+    .hero__nombre {
+      font-size: 50px;
+      font-weight: 700;
+    }
+
+    .hero__rol {
+      font-size: 40px;
+      margin-top: var(--espacio-xs);
+    }
+
+    /* ===============================
+       SECCIONES GENERALES
+    =============================== */
+    section {
+      padding: var(--espacio-lg) var(--espacio-md);
+    }
+
+    /* Centrar contenido de las secciones */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.seccion__texto {
+  text-align: center;
+}
+
+    .seccion__titulo {
+      font-size: 45px;
+      margin-bottom: var(--espacio-sm);
+      color: var(--color-secundario);
+    }
+
+    .seccion__texto {
+      font-size: 30px;
+      max-width: 800px;
+    }
+
+    /* ===============================
+       LAYOUT DESKTOP
+    =============================== */
+    @media (min-width: 1024px) {
+      .header__menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        padding: 0;
+        gap: var(--espacio-md);
+      }
+
+      .header__hamburger {
+        display: none;
+      }
+
+      .hero__nombre {
+        font-size: 2.6rem;
+      }
+
+      .hero__rol {
+        font-size: 1.8rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: var(--espacio-lg);
+      }
+    }
+
+    /* ===============================
+       ANIMACIONES
+    =============================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===============================
+       BOTONES
+    =============================== */
+    .btn {
+      display: inline-block;
+      margin-top: var(--espacio-sm);
+      padding: 0.75rem 1.5rem;
+      background-color: var(--color-secundario);
+      color: var(--color-blanco);
+      border-radius: var(--radio);
+      transition: var(--transicion);
+    }
+
+    .btn:hover {
+      background-color: #2f6d6f;
+      transform: translateY(-2px);
+    }
+
+    /* ===============================
+       FOOTER / CONTACTO
+    =============================== */
+    .contacto {
+      background-color: var(--color-primario);
+      color: var(--color-blanco);
+      text-align: center;
+    }
+
+    .contacto p {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">XM</div>
+      <nav class="header__menu" id="menu">
+        <a href="#hero">Inicio</a>
+        <a href="#sobre">Sobre mí</a>
+        <a href="#educacion">Educación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="header__hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <img src="Foto.jpeg" alt="Foto de perfil" class="hero__img" />
+    <h1 class="hero__nombre">Ximena Mabel Montalvo Galván</h1>
+    <p class="hero__rol">Diseñadora Multimedia</p>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section id="sobre" class="fade-up">
+    <h2 class="seccion__titulo">Sobre mí</h2>
+    <p class="seccion__texto">
+      Me considero una persona profesional y dedicada, que da el 100% en sus trabajos. Soy una persona creativa, responsable y organizada, dispuesta a trabajar sola y en equipo
+    </p>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="sobre" class="fade-up">
+    <h2 class="seccion__titulo">Habilidades</h2>
+    <p class="seccion__texto">
+
+  <p class="seccion__texto"> Manejo de herramientas digitales (Avanzado)</p>
+  <p class="seccion__texto">• Programas basicos de Adobe Creative Cloud (Avanzado - intermedio)</p>
+  <p class="seccion__texto">• Procreate (Avanzado)</p>
+  <p class="seccion__texto">• Blender (Básico)</p>
+  <p></p>
+  <p class="seccion__texto">• Organización y gestión del tiempo</p>
+  <p class="seccion__texto">• Comunicación efectiva</p>
+  <p class="seccion__texto">• Trabajo en equipo</p>
+  <p class="seccion__texto">• Aprendizaje rápido</p>
+  <p class="seccion__texto">• Atención al detalle</p>
+    
+    </p>
+  </section>
+
+    <!-- Idiomas -->
+  <section id="sobre" class="fade-up">
+    <h2 class="seccion__titulo">Idiomas</h2>
+    <p class="seccion__texto">
+    Español - Nativo
+     <p class="seccion__texto"> Inglés - B2+
+    </p>
+  </section>
+
+  <!-- EDUCACIÓN -->
+  <section id="educacion" class="fade-up">
+    <h2 class="seccion__titulo">Educación</h2>
+    <p class="seccion__texto">
+      Licenciatura en Diseño Multimedia y Arte Digital
+      Universidad del Valle de México
+      2022 - En curso
+    </p>
+    <p class="seccion__texto">
+      Preparatoria
+      Colegio de Bachilleres Plantel No. 27 San Luis V
+      2019 - 2022
+    </p>
+      <p class="seccion__texto">
+      • Curso en animación, 3D e Ilustración (CADO) - 2023
+    </p>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="fade-up">
+    <h2 class="seccion__titulo">Proyectos Destacados</h2>
+    <p class="seccion__texto">
+     Video clip - Ilumina la oscuridad - Argonautas de terciopelo
+    </p>
+  </section>
+
+    <!-- Experiencia Laboral -->
+  <section id="sobre" class="fade-up">
+    <h2 class="seccion__titulo">Habilidades</h2>
+    <p class="seccion__texto">
+      Creación de Plaantillas editoriales de libros blancos  -  2025
+    </p>
+     <p class="seccion__texto">
+      Asistente de Ceremonias Holisticas  -  2024 / en curso
+    </p>
+     <p class="seccion__texto">
+      Traducciones (Español - inglés / Inglés - Español) - 2023 / en curso  
+    </p>
+     <p class="seccion__texto">
+      Diseño y asistencia en creación de agendas - 2023 / en curso
+    </p>
+  </section>
+
+
+  <!-- CONTACTO -->
+  <footer id="contacto" class="contacto fade-up">
+    <h2 class="seccion__titulo">Contacto</h2>
+    <p>Email: ximena.mabel.21@gmail.com</p>
+    <p>Instagram: ArtbyMab</p>
+    <a href="mailto:ejemplo@email.com" class="btn">Escríbeme</a>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Menú hamburguesa
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('header__menu--activo');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+
+    // Animaciones al hacer scroll
+    const elementos = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elementos.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
